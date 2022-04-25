@@ -1,0 +1,11 @@
+int subsetXORSum(vector<int>& nums) {
+        int n=nums.size();
+        if(n==0)
+            return 0;
+        int sum=0;
+        for(auto it:nums)
+        {
+            sum|=it;
+        }
+        return sum*pow(2,n-1);
+    }
