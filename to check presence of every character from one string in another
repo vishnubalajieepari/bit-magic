@@ -1,0 +1,27 @@
+ bool isconsistent(string s,string ss)         ///using XOR between the values of characters
+    {
+        int a=0,b=0;
+        for(auto it:s)
+        {
+            a|=1<<(it-'a');
+        }
+        b=a;
+        for(auto it:ss)
+        {
+            b|=1<<(it-'a');
+        }
+        return (a^b)==0;
+    }
+bool isconsistent(string s,string ss)             //using AND between the values of characters
+{
+        int a=0,b=0;
+        for(auto it:s)
+        {
+            a|=1<<(it-'a');
+        }
+        for(auto it:ss)
+        {
+            b|=1<<(it-'a');
+        }
+        return (a&b)==b;
+}
